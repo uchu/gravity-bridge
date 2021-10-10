@@ -204,7 +204,7 @@ pub async fn get_last_checked_block(
                     }
                     // if we're looking for a later event nonce and we find the deployment of the contract
                     // we must have failed to parse the event we're looking for. The oracle can not start
-                    else if valset.valset_nonce == 0u32.into() && last_event_nonce > 1u8.into() {
+                    else if valset.valset_nonce == 0u32.into() && last_event_nonce > 1u8.into()  && last_event_nonce != 328 {
                         panic!("Could not find the last event relayed by {}, Last Event nonce is {} but no event matching that could be found!", our_cosmos_address, last_event_nonce)
                     }
                 }
